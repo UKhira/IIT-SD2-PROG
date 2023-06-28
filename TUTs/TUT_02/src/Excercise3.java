@@ -14,5 +14,6 @@ public class Excercise3 {
         else {
             System.out.println("Cold");
         }
+        tempInput.close();
     }
 }

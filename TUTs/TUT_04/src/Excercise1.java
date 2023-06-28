@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Excercise1 {
     public static void main(String[] args) {
         int [] array = new int [10];
@@ -14,7 +13,7 @@ public class Excercise1 {
         }
         for(int el: array){
            if (el <= 40){
-            sout
+            // sout
            }
         }
         input.close(); 

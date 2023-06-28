@@ -16,6 +16,6 @@ public class Excercise2 {
         else{
             System.out.println("Under 18");
         }
-
+        ageInput.close();
     }
 }

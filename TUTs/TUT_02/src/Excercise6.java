@@ -12,5 +12,6 @@ public class Excercise6 {
         else if (letter >= 'A' && letter <= 'Z') {
             System.out.println("An uppercase character");
         }
+        input.close();
     }
 }

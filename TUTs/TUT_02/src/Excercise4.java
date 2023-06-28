@@ -25,5 +25,6 @@ public class Excercise4 {
         else {
             System.out.println("A");
         }
+        markInput.close();
     }
 }

@@ -22,5 +22,6 @@ public class Excercise5 {
             case "December" : days = 31; break;
         }
         System.out.println(days);
+        monthInput.close();
     }
 }
