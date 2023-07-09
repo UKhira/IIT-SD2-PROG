@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Toy {
+    private String code;
+    private String name;
+    private double price;
+    private String gender;
+    private int stock;
+
+    public Toy(String code, String name, double price, String gender, int stock) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.gender = gender;
+        this.stock = stock;
+    }
+
+    // Getters and setters
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+}
+
+class ToyFactory {
+    private List<Toy> toys;
+
+    public ToyFactory() {
+        toys = new ArrayList<>();
+    }
+
+    public void addToy(String code, String name, double price, String gender, int stock) {
+        Toy toy = new Toy(code, name, price, gender, stock);
+        toys.add(toy);
+    }
+
+    public void updateStock(String code, int stock) {
+        for (Toy toy : toys) {
+            if (toy.getCode().equals(code)) {
+                toy.setStock(stock);
+                return;
+            }
+        }
+        System.out.println("Toy not found!");
+    }
+
+    public void printAllToys() {
+        for (Toy toy : toys) {
+            System.out.println("Code: " + toy.getCode());
+            System.out.println("Name: " + toy.getName());
+            System.out.println("Price: $" + toy.getPrice());
+            System.out.println("Gender: " + toy.getGender());
+            System.out.println("Stock: " + toy.getStock());
+            System.out.println();
+        }
+    }
+}
+
+public class ToyFactoryApp {
+    public static void main(String[] args) {
+        ToyFactory factory = new ToyFactory();
+
+        factory.addToy("001", "Doll", 10.99, "Girls", 20);
+        factory.addToy("002", "Car", 12.99, "Boys", 15);
+        factory.addToy("003", "Ball", 5.99, "General", 30);
+
+        factory.updateStock("001", 15);
+
+        factory.printAllToys();
+    }
+}
